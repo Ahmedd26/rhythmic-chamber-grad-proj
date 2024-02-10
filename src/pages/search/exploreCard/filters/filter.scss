@@ -1,0 +1,45 @@
+@import "../../../../styles/functions";
+@import "../../../../styles/variables";
+.filter {
+  width: 100%;
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  color: $mainFontColor;
+  background-color: $mainBackgroundColor;
+  border: 1px solid $mainFontColor;
+  border-radius: 8px;
+  width: 100%;
+  text-align: center;
+  transition: $transition;
+  cursor: pointer;
+  &:hover {
+    color: $mainBackgroundColor;
+    background-color: $mainFontColor;
+    .button {
+      color: $mainBackgroundColor;
+      background-color: $mainFontColor;
+    }
+  }
+  .button {
+    font-family: "Poppins";
+    text-transform: none;
+    font-size: 1.25rem;
+    font-weight: 600;
+    transition: $transition;
+    color: $mainFontColor;
+    background-color: $mainBackgroundColor;
+    width: 100%;
+    height: 100%;
+    font-weight: 600px;
+    padding: 0;
+    &:hover {
+      color: $mainBackgroundColor;
+      background-color: $mainFontColor;
+    }
+    &::first-letter {
+      text-transform: uppercase;
+    }
+  }
+}

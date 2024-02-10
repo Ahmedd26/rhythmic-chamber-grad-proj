@@ -1,0 +1,135 @@
+@import "../../styles/functions";
+@import "../../styles/variables";
+
+.profileAside {
+  grid-column: span 3;
+  background-color: $mainBackgroundColor;
+  color: $mainFontColor;
+  border: $mainBorder;
+  border-radius: $mainBorderRadius;
+  padding: 2rem;
+  @include d-flex(center, flex-start, column, 2rem);
+  .avatar {
+    width: 70%;
+    aspect-ratio: 1 1;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  .username-title {
+    @include d-flex(center, flex-start, column, 1rem);
+    h1 {
+      font-size: 2rem;
+      font-weight: 600;
+    }
+    p {
+      font-size: 1rem;
+      font-weight: 400;
+      color: $FontColor800;
+    }
+  }
+  hr {
+    width: 100%;
+    border-color: $mainFontColor;
+  }
+  .editProfileButton {
+    width: 100%;
+    padding: 0.75rem 0;
+    font-size: 1rem;
+    font-weight: 600;
+    background-color: $secondaryBackgroundColor;
+    border: $mainBorder;
+    border-radius: $mainBorderRadius;
+    @include d-flex(center, space-around, row);
+    transition: $transition;
+    &:hover {
+      background-color: $mainFontColor;
+      color: $mainBackgroundColor;
+    }
+  }
+  .stats {
+    width: 100%;
+    background-color: $secondaryBackgroundColor;
+    border: $mainBorder;
+    border-radius: $mainBorderRadius;
+    padding: 1rem;
+    @include d-flex(flex-start, flex-start, column, 0.5rem);
+    h3 {
+      font-size: 0.875rem;
+      font-weight: 400;
+      margin-bottom: 0.5rem;
+    }
+    .stat {
+      width: 100%;
+      @include d-flex(center, space-between, row);
+      span {
+        font-family: $bebas;
+        font-weight: lighter;
+        font-size: 1.25rem;
+      }
+    }
+  }
+  .asideProducts {
+    width: 100%;
+    padding: 1rem;
+    border: $mainBorder;
+    border-radius: $mainBorderRadius;
+    background-color: $secondaryBackgroundColor;
+    @include d-flex(flex-start, flex-start, column, 1rem);
+    .productsTitle {
+      width: 100%;
+      @include d-flex(center, space-between, row);
+
+      h2 {
+        font-size: 0.875rem;
+        font-weight: 400;
+      }
+      a {
+        font-size: 12px;
+        transition: $transition;
+        &:hover {
+          color: $mainFontColorHover;
+        }
+      }
+    }
+    .productTiles {
+      @include d-flex(flex-start, flex-start, row, 1rem);
+      flex-wrap: wrap;
+      .productTile {
+        font-size: 0.75rem;
+        padding: 0.25rem 0.75rem;
+        background-color: $FontColor200;
+        border-radius: 1.25rem;
+      }
+    }
+  }
+  .aboutBio {
+    padding: 1rem;
+    border-radius: $mainBorderRadius;
+    border: $mainBorder;
+    background-color: $secondaryBackgroundColor;
+    @include d-flex(flex-start, flex-start, column, 1rem);
+    max-height: 12.5rem;
+    h2 {
+      font-size: 0.875rem;
+      font-weight: 400;
+    }
+    p {
+      font-size: 0.75rem;
+      text-overflow: ellipsis;
+      overflow-y: auto;
+    }
+  }
+  .userLinks {
+    width: 100%;
+    padding: 1rem;
+    background-color: $secondaryBackgroundColor;
+    border: $mainBorder;
+    border-radius: $mainBorderRadius;
+    @include d-grid(6);
+    place-items: center;
+    a {
+      font-size: 1.125rem;
+      grid-column: span 1;
+    }
+  }
+}

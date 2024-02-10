@@ -1,0 +1,49 @@
+@import "../../../styles/functions";
+@import "../../../styles/variables";
+.card {
+  @include d-flex(flex-start, center, column);
+  width: 100%;
+
+  img {
+    width: 100%;
+    aspect-ratio: 1 1;
+    object-fit: cover;
+  }
+  .info {
+    padding: 1rem;
+    width: 100%;
+    background-color: $secondaryBackgroundColor;
+    @include d-flex(flex-start, flex-start, column, 1rem);
+    .title-info {
+      width: 100%;
+      @include d-flex(center, space-between, row);
+      h2 {
+        // font-size: 1.25rem;
+        font-size: 1.5vw;
+        font-weight: 600;
+      }
+      span {
+        // font-size: 0.875rem;
+        font-size: 1vw;
+        font-weight: 400;
+      }
+    }
+    .stats {
+      width: 90%;
+      @include d-grid(12, 0.5rem);
+      .stat {
+        grid-column: span 6;
+        @include d-grid(12, 0.5rem);
+        align-items: center;
+        ._item {
+          grid-column: span 3;
+          font-size: 0.875rem;
+        }
+        .bolding {
+          grid-column: span 6;
+          font-weight: 800;
+        }
+      }
+    }
+  }
+}

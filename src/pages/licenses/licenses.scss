@@ -1,0 +1,34 @@
+@import "../../styles/functions";
+@import "../../styles/variables";
+$dummy: $mainBackgroundColor;
+$dummy: $secondaryBackgroundColor;
+$dummy: $inputBackgroundColor;
+$dummy: $mainFontColor;
+$dummy: $mainFontColorHover;
+$dummy: $bebas;
+$dummy: $transition;
+$dummy: $mainBorder;
+$dummy: $mainBorderRadius;
+$dummy: $mainBoxShadow;
+$dummy: $secondaryFontColor;
+$dummy: $FontColor200;
+$dummy: $FontColor400;
+$dummy: $FontColor600;
+$dummy: $FontColor800;
+
+.licensesPageContainer {
+  min-height: 100vh;
+  color: $mainFontColor;
+  margin: 64px 0;
+  .licenseHeading {
+    font-size: 32px;
+    font-weight: 600;
+    border-bottom: $mainBorder;
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+  }
+  .licensesContainer {
+    margin-top: 32px;
+    @include d-flex(center, center, column, 32px);
+  }
+}

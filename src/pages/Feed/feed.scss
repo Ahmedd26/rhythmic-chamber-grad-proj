@@ -1,0 +1,254 @@
+@import "../../styles/functions";
+@import "../../styles/variables";
+.mainFeed {
+  margin: 64px 0;
+  min-height: 100vh;
+  color: $mainFontColor;
+  @include d-flex(flex-start, flex-start, column, 32px);
+  .feedHeader {
+    width: 100%;
+    @include d-flex(center, space-between, row);
+    h1 {
+      flex: 8;
+      font-size: 36px;
+      font-weight: lighter;
+      font-family: $bebas;
+    }
+    .filter {
+      flex: 1;
+      .button {
+        padding: 7px 14px;
+        text-align: center;
+        background-color: $mainBackgroundColor;
+        border: $mainBorder;
+        border-radius: $mainBorderRadius;
+        font-size: 16px;
+        font-weight: 700;
+        &:hover {
+          background-color: $mainFontColor;
+          color: $mainBackgroundColor;
+        }
+      }
+    }
+  }
+  .content {
+    @include d-grid(12);
+    width: 100%;
+    .left {
+      width: 100%;
+      grid-column: span 3;
+      background-color: $mainBackgroundColor;
+      color: $mainFontColor;
+      padding: 16px;
+      border: $mainBorder;
+      border-radius: $mainBorderRadius;
+      max-height: 443px;
+      overflow-y: auto;
+      @include d-flex(flex-start, flex-start, column, 16px);
+      h1 {
+        font-size: 24px;
+      }
+      .HCard {
+        @include d-flex(flex-start, flex-start, column, 0px);
+
+        h2 {
+          font-size: 14px;
+          font-weight: 600;
+        }
+        span {
+          font-size: 12px;
+        }
+      }
+    }
+    .middle {
+      grid-column: span 6;
+      @include d-flex(flex-start, flex-start, column, 32px);
+      padding: 0 32px;
+      .midTop {
+        width: 100%;
+        background-color: $mainBackgroundColor;
+        border: $mainBorder;
+        border-radius: $mainBorderRadius;
+        padding: 16px;
+        &:hover {
+          .fa-arrow-right {
+            animation: rL 0.5s ease-in-out infinite alternate;
+          }
+        }
+        @include d-flex(center, space-between, row);
+        .midTopLeft {
+          @include d-flex(center, center, row, 16px);
+          .promote {
+            font-size: 16px;
+          }
+          h2 {
+            font-size: 16px;
+            font-weight: 600;
+          }
+        }
+        .midTopRight {
+          @include d-flex(center, center, row, 8px);
+          span {
+            font-size: 14px;
+          }
+          .fa-arrow-right {
+            font-size: 14px;
+          }
+        }
+      }
+      .midCards {
+        @include d-flex(flex-start, flex-start, column, 32px);
+        width: 100%;
+        .midCard {
+          width: 100%;
+          padding: 32px;
+          border: $mainBorder;
+          border-radius: $mainBorderRadius;
+          background-color: $mainBackgroundColor;
+          @include d-flex(flex-start, flex-start, column, 16px);
+          .one {
+            width: 100%;
+            @include d-flex(center, flex-start, row, 16px);
+            img {
+              width: 32px;
+              height: 32px;
+              object-fit: cover;
+              border-radius: 50%;
+            }
+            h2 {
+              font-size: 18px;
+              color: $mainFontColor;
+            }
+            span {
+              font-size: 14px;
+              color: $FontColor600;
+            }
+          }
+          .two {
+            @include d-flex(flex-start, flex-start, row, 24px);
+            .twoOne {
+              img {
+                width: 192px;
+                height: 192px;
+                object-fit: cover;
+              }
+            }
+            .twoTwo {
+              @include d-flex(flex-start, flex-start, column, 8px);
+              .twoTwoOne {
+                @include d-flex(center, flex-start, row, 16px);
+                .playPause {
+                  font-size: 32px;
+                }
+                h1 {
+                  font-size: 32px;
+                  font-weight: 600;
+                }
+              }
+              .twoTwoTwo {
+                @include d-flex(flex-start, flex-start, column, 4px);
+                width: 100%;
+                p {
+                  font-size: 16px;
+                  font-weight: 400;
+                }
+              }
+              .twoTwoThree {
+                @include d-flex(center, center, row, 16px);
+                padding: 10px;
+                font-size: 14px;
+                background-color: $FontColor200;
+                color: $mainFontColor;
+                border: $mainBorder;
+                border-radius: $mainBorderRadius;
+                transition: $transition;
+                cursor: pointer;
+                &:hover {
+                  color: $mainBackgroundColor;
+                  background-color: $mainFontColor;
+                }
+              }
+            }
+          }
+          .three {
+            @include d-flex(center, flex-start, row, 16px);
+            span {
+              @include d-flex(center, flex-start, row, 8px);
+              font-size: 16px;
+            }
+          }
+        }
+      }
+    }
+    .right {
+      width: 100%;
+      grid-column: span 3;
+      background-color: $mainBackgroundColor;
+      color: $mainFontColor;
+      border: $mainBorder;
+      border-radius: $mainBorderRadius;
+      @include d-flex(flex-start, flex-start, column, 16px);
+      max-height: 443px;
+      overflow-y: auto;
+      h1 {
+        font-size: 24px;
+        padding: 16px;
+        padding-bottom: 0;
+      }
+      .FHCard {
+        scrollbar-width: thin;
+        padding: 16px;
+        width: 100%;
+        transition: $transition;
+        @include d-flex(center, space-between, row);
+        .FLeft {
+          @include d-flex(flex-start, center, row, 8px);
+          img {
+            width: 32px;
+            height: 32px;
+            object-fit: cover;
+            border-radius: 50%;
+          }
+          .FTxt {
+            @include d-flex(flex-start, flex-start, column);
+            h3 {
+              font-size: 14px;
+            }
+            span {
+              font-size: 7px;
+            }
+          }
+        }
+        .FRight {
+          @include d-flex(center, center);
+          padding: 8px 12px;
+          font-size: 12px;
+          border-radius: $mainBorderRadius;
+          border: $mainBorder;
+          transition: $transition;
+          cursor: pointer;
+          color: $mainFontColor;
+          background-color: $secondaryBackgroundColor;
+          &:hover {
+            background-color: $mainBackgroundColor;
+            color: $mainFontColor;
+          }
+        }
+        &:hover {
+          background-color: $mainFontColor;
+          color: $mainBackgroundColor;
+        }
+      }
+    }
+  }
+}
+@keyframes rL {
+  0% {
+    // transform: rotate(1);
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(8px);
+    // transform: rotate(360deg);
+  }
+}

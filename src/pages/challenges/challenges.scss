@@ -1,0 +1,68 @@
+@import "../../styles/functions";
+@import "../../styles/variables";
+.challenges {
+  padding-top: 64px;
+  padding-bottom: 64px;
+  .enrolledBox {
+    padding: 32px;
+    color: $mainFontColor;
+    background-color: $mainBackgroundColor;
+    border: $mainBorder;
+    border-radius: $mainBorderRadius;
+    h1 {
+      font-size: 1.75rem;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+    p {
+      font-size: 18px;
+      font-weight: 400;
+      margin-bottom: 32px;
+    }
+    .cardsHolder {
+      @include d-flex(flex-start, flex-start, row, 1rem);
+      flex-wrap: wrap;
+    }
+  }
+  .challengesHeader {
+    margin: 64px 0;
+    @include d-flex(center, space-between, row);
+    color: $mainFontColor;
+    h1 {
+      font-size: 28px;
+      font-weight: 600;
+      display: inline-block;
+      text-shadow: 0px 0px 25px $mainFontColorHover;
+      .lighter {
+        color: $mainFontColorHover;
+        text-shadow: 0px 0px 20px $mainFontColor;
+      }
+    }
+    .rightCat {
+      @include d-flex(center, center, row, 1rem);
+      h6 {
+        font-size: 24px;
+        font-weight: 300;
+      }
+      span {
+        padding: 8px 32px;
+        text-transform: capitalize;
+        font-size: 16px;
+        font-weight: 500;
+        border: $mainBorder;
+        border-radius: $mainBorderRadius;
+        background-color: $mainBackgroundColor;
+        color: $mainFontColor;
+        transition: $transition;
+        cursor: pointer;
+        &:hover {
+          background-color: $mainFontColor;
+          color: $mainBackgroundColor;
+        }
+      }
+    }
+  }
+  .browseChallenges {
+    @include d-grid(12, 32px);
+  }
+}

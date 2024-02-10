@@ -1,0 +1,108 @@
+@import "../../../styles/functions";
+@import "../../../styles/variables";
+
+.viewProductAsideContainer {
+  grid-column: span 3;
+  width: 100%;
+  background-color: $mainBackgroundColor;
+  padding: 32px;
+  border: $mainBorder;
+  border-radius: $mainBorderRadius;
+  @include d-flex(center, flex-start, column, 32px);
+  .specialLine {
+    width: 100%;
+    border-color: $mainFontColor;
+  }
+  .sectionOne {
+    width: 100%;
+    @include d-flex(center, flex-start, column, 16px);
+    .imageWrapper {
+      width: 100%;
+      height: 100%;
+      img {
+        aspect-ratio: 1/1;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: $mainBorderRadius;
+      }
+    }
+    .productHeading {
+      width: 100%;
+      @include d-flex(center, flex-start, column, 8px);
+      .productName {
+        font-size: 38px;
+      }
+      .productAuthor {
+        font-size: 18px;
+      }
+    }
+    .freeDownloadButton {
+      @include d-flex(center, center, row, 16px);
+      width: 100%;
+      font-size: 18px;
+      background-color: $secondaryBackgroundColor;
+      padding: 16px 0;
+      border: $mainBorder;
+      border-radius: $mainBorderRadius;
+      span {
+        font-weight: 600;
+      }
+      transition: $transition;
+      &:hover {
+        background-color: $mainFontColor;
+        color: $mainBackgroundColor;
+      }
+    }
+  }
+  .sectionTwo {
+    width: 100%;
+    @include d-grid(2, 16px);
+    .productStat {
+      grid-column: span 1;
+      @include d-flex(center, flex-start, row, 16px);
+      .ProductStatIco {
+        font-size: 32px;
+      }
+      .productStatLeft {
+        @include d-flex(flex-start, flex-start, column, 4px);
+        .count {
+          font-size: 16px;
+          font-weight: 400;
+        }
+        .title {
+          font-size: 14px;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+  .sectionThree {
+    width: 100%;
+    @include d-flex(flex-start, flex-start, column, 16px);
+    .sectionTitle {
+      width: 100%;
+      font-size: 24px;
+      font-weight: 400;
+    }
+    .gridSys {
+      width: 100%;
+      @include d-flex(center, space-between, row);
+      ul {
+        @include d-flex(flex-start, flex-start, column, 8px);
+        li {
+          font-size: 16px;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+  .sectionFour {
+    width: 100%;
+    @include d-flex(flex-start, flex-start, column, 16px);
+    .productTagsContainer {
+      @include d-flex(flex-start, center, row, 8px);
+      flex-wrap: wrap;
+    }
+  }
+}

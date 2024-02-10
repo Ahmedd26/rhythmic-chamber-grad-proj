@@ -1,0 +1,212 @@
+@import "../../styles/functions";
+@import "../../styles/variables";
+
+.dashboard {
+  margin-top: 64px;
+  margin-bottom: 64px;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 32px;
+  .stats {
+    grid-column: span 12;
+    padding: 2rem;
+    border: $mainBorder;
+    border-radius: $mainBorderRadius;
+    background-color: $mainBackgroundColor;
+    color: $mainFontColor;
+    @include d-flex(flex-start, center, column, 1rem);
+    .heading {
+      font-size: 2.5rem;
+      font-weight: lighter;
+      font-family: $bebas;
+    }
+    .options {
+      width: 100%;
+      @include d-flex(center, space-between, row);
+      .statDuration {
+        @include d-flex(center, center, row, 1rem);
+        span {
+          font-size: 1.75rem;
+          font-family: $bebas;
+          font-weight: lighter;
+        }
+        .dropdownTime {
+          padding: 4px 16px;
+          font-size: 1rem;
+          font-weight: lighter;
+          font-family: $bebas;
+          background-color: $secondaryBackgroundColor;
+        }
+      }
+      .linkToProfile {
+        padding: 8px 24px;
+        color: $mainFontColor;
+        background-color: $secondaryBackgroundColor;
+        font-size: 24px;
+        font-weight: lighter;
+        font-family: $bebas;
+        transition: $transition;
+        &:hover {
+          color: $secondaryBackgroundColor;
+          background-color: $mainFontColor;
+        }
+      }
+    }
+    .statTiles {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 1rem;
+      .statTile {
+        grid-column: span 3;
+        padding: 1.5rem 2rem;
+        background-color: $secondaryBackgroundColor;
+        // @include d-flex(center, space-between, row);
+        @include d-grid(12, 16px);
+        .dashIco {
+          grid-column: span 3;
+          width: 100%;
+        }
+        .value {
+          grid-column: span 4;
+          width: 100%;
+        }
+        .name {
+          grid-column: span 5;
+          width: 100%;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+  .dashboardSectionTwo {
+    grid-column: span 12;
+    width: 100%;
+    @include d-grid(12, 16px);
+    .challengesWidget {
+      grid-column: span 6;
+      background-image: url("../../assets/images/Challenges.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: fit-content;
+      border-radius: $mainBorderRadius;
+      .linkToDash {
+        display: block;
+        width: 100%;
+        color: $mainFontColor;
+        background-color: rgba(16, 16, 16, 0.6);
+        border: $mainBorder;
+        border-radius: $mainBorderRadius;
+        @include d-flex(center, center, column);
+        transition: $transition;
+        .chTop {
+          border-radius: $mainBorderRadius $mainBorderRadius 0 0;
+          width: 100%;
+          padding: 16px;
+          background-color: rgba(16, 16, 16, 0.7);
+          transition: $transition;
+          h1 {
+            font-size: 50px;
+            font-family: $bebas;
+            font-weight: lighter;
+          }
+        }
+        .chMiddle {
+          width: 100%;
+          text-align: center;
+          padding: 32px 0;
+          transition: $transition;
+          h3 {
+            transition: $transition;
+            font-size: 40px;
+            font-family: $bebas;
+            font-weight: lighter;
+          }
+        }
+        .chBottom {
+          border-radius: 0 0 $mainBorderRadius $mainBorderRadius;
+          width: 100%;
+          padding: 16px;
+          background-color: rgba(16, 16, 16, 0.7);
+          transition: $transition;
+          p {
+            font-size: 14px;
+          }
+        }
+        &:hover {
+          background-color: rgba(252, 177, 75, 0.3);
+          color: $mainBackgroundColor;
+          .chTop {
+            opacity: 0;
+          }
+          .chMiddle {
+            transform: scale(3);
+            h3 {
+              text-shadow: 0px 0px 10px $mainBackgroundColor;
+              animation: shake 1s alternate infinite;
+            }
+          }
+          .chBottom {
+            opacity: 0;
+          }
+        }
+      }
+    }
+
+    .guide {
+      grid-column: span 3;
+      background-color: $mainBackgroundColor;
+      border: $mainBorder;
+      border-radius: $mainBorderRadius;
+      color: $mainFontColor;
+      padding: 1rem;
+      .GTitle {
+        font-size: 26px;
+        font-weight: lighter;
+        font-family: $bebas;
+        margin-bottom: 16px;
+      }
+      .squares {
+        @include d-grid(4, 8px);
+        .square {
+          min-height: 117px;
+          background-color: $secondaryBackgroundColor;
+          border-radius: $mainBorderRadius;
+          grid-column: span 2;
+          @include d-flex(center, space-evenly, column);
+          transition: $transition;
+          .squareIcon {
+            font-size: 32px;
+          }
+          .guideText {
+            font-size: 16px;
+            font-weight: 600;
+          }
+          &:hover {
+            transform: scale(1.0625);
+            color: $mainBackgroundColor;
+            background-color: $mainFontColor;
+            animation: shake 0.5s alternate infinite;
+          }
+        }
+      }
+    }
+  }
+  .dashboardSectionThree {
+    grid-column: span 12;
+    width: 100%;
+    @include d-grid(12, 16px);
+  }
+}
+
+@keyframes shake {
+  0% {
+    transform: translateY(0);
+    color: $secondaryBackgroundColor;
+  }
+  100% {
+    transform: translateY(-10px);
+    color: $mainBackgroundColor;
+  }
+}

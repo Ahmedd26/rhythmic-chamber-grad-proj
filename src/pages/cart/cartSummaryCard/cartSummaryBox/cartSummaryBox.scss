@@ -1,0 +1,73 @@
+@import "../../../../styles/functions";
+@import "../../../../styles/variables";
+.cartRightContainer {
+  width: 100%;
+  height: fit-content;
+  background-color: $mainBackgroundColor;
+  padding: 16px;
+  border: $mainBorder;
+  border-radius: $mainBorderRadius;
+  grid-column: span 4;
+  @include d-flex(flex-start, flex-start, column, 16px);
+  .carSummaryTop {
+    width: 100%;
+    @include d-flex(center, space-between, row);
+    .cartSummaryHeading {
+      font-size: 32px;
+      font-weight: lighter;
+      font-family: $bebas;
+    }
+    .fa-cart-shopping {
+      font-size: 24px;
+    }
+    padding-bottom: 16px;
+    border-bottom: $mainBorder;
+  }
+  .cartSummaryCards {
+    width: 100%;
+    @include d-flex(flex-start, flex-start, column, 16px);
+    padding-bottom: 16px;
+    border-bottom: $mainBorder;
+  }
+  .cartSummaryCalc {
+    width: 100%;
+    @include d-flex(flex-start, flex-start, column, 8px);
+    .cartCalcItem {
+      width: 100%;
+      @include d-flex(center, space-between, row);
+      .subSummary {
+        font-size: 18px;
+        font-weight: 400;
+      }
+      .subSummaryPrice {
+        font-size: 18px;
+        font-weight: 600;
+      }
+      .totalSummary {
+        font-size: 24px;
+        font-weight: 600;
+      }
+      .totalSummaryPrice {
+        font-size: 24px;
+        font-weight: 700;
+      }
+    }
+  }
+  .cartSummaryPayment {
+    width: 100%;
+    padding: 16px;
+    background-color: $secondaryBackgroundColor;
+    color: $mainFontColor;
+    box-shadow: $blueBoxShadow;
+    border: $mainBorder;
+    border-radius: $mainBorderRadius;
+    text-align: center;
+    transition: $transition;
+    cursor: pointer;
+    font-weight: 600;
+    &:hover {
+      background-color: $mainFontColor;
+      color: $mainBackgroundColor;
+    }
+  }
+}

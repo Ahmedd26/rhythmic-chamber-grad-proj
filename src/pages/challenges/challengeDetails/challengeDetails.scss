@@ -1,0 +1,87 @@
+@import "../../../styles/functions";
+@import "../../../styles/variables";
+
+.challengeDetails {
+  margin: 4rem 0;
+  @include d-flex(flex-start, center, column, 4rem);
+  .detailsHeader {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: $mainFontColor;
+  }
+  .detailsTop {
+    width: 100%;
+    @include d-grid(12);
+    padding: 2rem;
+    background-color: $mainBackgroundColor;
+    color: $mainFontColor;
+    border: $mainBorder;
+    border-radius: $mainBorderRadius;
+    .detailsRight {
+      grid-column: span 4;
+      img {
+        width: 24rem;
+        height: 24rem;
+        object-fit: cover;
+      }
+    }
+    .detailsLeft {
+      grid-column: span 8;
+      @include d-flex(flex-start, flex-start, column, 1rem);
+      .detTitle {
+        font-size: 2rem;
+        font-weight: 600;
+      }
+      .detInfo {
+        font-size: 1.125rem;
+      }
+      .detPara {
+        font-size: 1rem;
+      }
+    }
+  }
+  .detailsBottom {
+    width: 100%;
+    @include d-flex(center, space-between, row);
+    background-color: $mainBackgroundColor;
+    color: $mainFontColor;
+    border: $mainBorder;
+    border-radius: $mainBorderRadius;
+    padding: 2rem;
+    .submitRight {
+      @include d-flex(flex-start, space-between, column, 1rem);
+      h2 {
+        font-size: 1.625rem;
+        font-weight: 600;
+      }
+      p {
+        font-size: 0.875rem;
+        a {
+          color: #008;
+        }
+      }
+    }
+    .submitLeft {
+      form {
+        input {
+          display: none;
+        }
+        label {
+          font-size: 1.125rem;
+          font-weight: 600;
+          padding: 1rem 2rem;
+          background-color: $secondaryBackgroundColor;
+          color: $mainFontColor;
+          border: $mainBorder;
+          border-radius: $mainBorderRadius;
+          transition: $transition;
+          cursor: pointer;
+          &:hover {
+            background-color: $mainFontColor;
+            color: $mainBackgroundColor;
+          }
+        }
+      }
+    }
+  }
+}

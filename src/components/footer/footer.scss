@@ -1,0 +1,110 @@
+@import "../../styles/functions";
+@import "../../styles/variables";
+
+.footer {
+  background-color: $headerFooterBackgroundColor;
+  .container {
+    width: 100%;
+    color: $mainFontColor;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    .about {
+      grid-column: span 6;
+      @include d-flex(flex-start, flex-start, column, 1rem);
+      .top {
+        @include d-flex(center, flex-start, row, 1rem);
+        img {
+          width: 4rem;
+          width: 4rem;
+        }
+        .title {
+          font-weight: lighter;
+          font-family: $bebas;
+          font-size: 3.125rem;
+        }
+      }
+      .bottom {
+        p {
+          text-transform: capitalize;
+          font-size: 1rem;
+          max-width: 35rem;
+        }
+      }
+    }
+    .menu {
+      grid-column: span 3;
+      @include d-flex(flex-start, flex-start, column, 1rem);
+      .title {
+        font-weight: lighter;
+        font-family: $bebas;
+        font-size: 3.125rem;
+      }
+      ul {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        li {
+          transition: $transition;
+          width: 100%;
+          height: 100%;
+          padding: 0.5rem;
+          a {
+            font-weight: lighter;
+            font-family: $bebas;
+            font-size: 1.5rem;
+          }
+          &:hover {
+            background-color: $mainFontColor;
+            color: $mainBackgroundColor;
+            padding-left: 1rem;
+            padding-right: 1rem;
+          }
+        }
+      }
+    }
+    .link {
+      grid-column: span 3;
+      @include d-flex(flex-start, flex-start, column, 1rem);
+      .title {
+        font-weight: lighter;
+        font-family: $bebas;
+        font-size: 3.125rem;
+      }
+      ul {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        li {
+          transition: $transition;
+          width: 100%;
+          height: 100%;
+          padding: 0.5rem;
+          a {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            align-items: center;
+            // FontAwesome Icon
+            .footerIcon {
+              grid-column: span 2;
+              font-size: 2rem;
+            }
+            // Text
+            span {
+              grid-column: span 10;
+              font-weight: lighter;
+              font-family: $bebas;
+              font-size: 1.5rem;
+            }
+          }
+          &:hover {
+            color: $mainBackgroundColor;
+            background-color: $mainFontColor;
+            padding-left: 1rem;
+          }
+        }
+      }
+    }
+  }
+}

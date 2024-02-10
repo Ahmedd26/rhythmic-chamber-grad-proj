@@ -1,0 +1,50 @@
+@import "../../../styles/functions";
+@import "../../../styles/variables";
+.announcementWidget {
+  grid-column: span 6;
+  border-radius: $mainBorderRadius;
+  border: $mainBorder;
+  width: 100%;
+  color: $mainFontColor;
+  background-color: $mainBackgroundColor;
+  transition: $transition;
+  padding: 16px;
+  .annTitle {
+    font-weight: lighter;
+    margin-bottom: 16px;
+    font-size: 26px;
+    font-family: $bebas;
+  }
+  .annBody {
+    background-color: $secondaryBackgroundColor;
+    @include d-flex(flex-start, center, row, 32px);
+    height: 242px;
+    border-radius: $mainBorderRadius;
+
+    .annLeft {
+      height: 100%;
+      width: 224px;
+      img {
+        border-radius: $mainBorderRadius 0 0 $mainBorderRadius;
+        height: 100%;
+        width: 224px;
+        object-fit: cover;
+      }
+    }
+    .annRight {
+      padding: 16px 16px 16px 0;
+      .annHead {
+        font-weight: lighter;
+        font-family: $bebas;
+        padding-bottom: 8px;
+        margin-bottom: 8px;
+        border-bottom: $mainBorder;
+      }
+      .annContent {
+        font-size: 14px;
+        max-height: 140px;
+        overflow-y: auto;
+      }
+    }
+  }
+}

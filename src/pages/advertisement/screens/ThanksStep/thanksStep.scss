@@ -1,0 +1,98 @@
+@import "../../../../styles/functions";
+@import "../../../../styles/variables";
+$dummy: $mainBackgroundColor;
+$dummy: $secondaryBackgroundColor;
+$dummy: $inputBackgroundColor;
+$dummy: $mainFontColor;
+$dummy: $mainFontColorHover;
+$dummy: $bebas;
+$dummy: $transition;
+$dummy: $mainBorder;
+$dummy: $mainBorderRadius;
+$dummy: $mainBoxShadow;
+$dummy: $secondaryFontColor;
+$dummy: $FontColor200;
+$dummy: $FontColor400;
+$dummy: $FontColor600;
+$dummy: $FontColor800;
+.thanksScreenContainer {
+  color: $mainFontColor;
+  background-color: rgba($color: $mainBackgroundColor, $alpha: 1);
+  width: 100%;
+  grid-column: span 6;
+  border: $mainBorder;
+  border-radius: $mainBorderRadius;
+  .brandHeading {
+    border-bottom: $mainBorder;
+
+    width: 100%;
+    padding: 32px;
+    background-color: $mainBackgroundColor;
+    border-radius: $mainBorderRadius $mainBorderRadius 0 0;
+    @include d-flex(center, center, row, 16px);
+    .LogoImage {
+      width: 64px;
+      height: 64px;
+      object-fit: cover;
+      aspect-ratio: 1 1;
+    }
+    .brandTitle {
+      font-size: 40px;
+      font-weight: lighter;
+      font-family: $bebas;
+    }
+  }
+  .thanksMessage {
+    padding: 32px;
+    width: 100%;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+    background-color: $secondaryBackgroundColor;
+    border-bottom: $mainBorder;
+  }
+  .thanksText {
+    padding: 32px;
+    background-color: $secondaryBackgroundColor;
+    @include d-flex(flex-start, flex-start, column, 16px);
+    p {
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    .lastP {
+      font-size: 16px;
+      font-weight: 600;
+    }
+    .signature {
+      @include d-flex(flex-start, flex-start, column, 8px);
+      span {
+        font-size: 32px;
+        font-weight: lighter;
+        font-family: $bebas;
+      }
+    }
+  }
+
+  .navToHome {
+    width: 100%;
+    padding: 32px;
+    border-top: $mainBorder;
+    background-color: $mainBackgroundColor;
+    border-radius: 0 0 $mainBorderRadius $mainBorderRadius;
+    text-align: end;
+    a {
+      padding: 8px 16px;
+      border: $mainBorder;
+      border-radius: $mainBorderRadius;
+      font-size: 18px;
+      font-weight: 600;
+      color: $mainFontColor;
+      background-color: $secondaryBackgroundColor;
+      transition: $transition;
+      &:hover {
+        background-color: $mainFontColor;
+        color: $secondaryBackgroundColor;
+      }
+    }
+  }
+}

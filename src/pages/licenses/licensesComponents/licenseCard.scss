@@ -1,0 +1,76 @@
+@import "../../../styles/functions";
+@import "../../../styles/variables";
+.licenseCard {
+  width: 100%;
+  background-color: $mainBackgroundColor;
+  border: $mainBorder;
+  border-radius: $mainBorderRadius;
+  @include d-flex(flex-start, flex-start, column);
+  .licenseCardTop {
+    padding: 32px;
+    width: 100%;
+    @include d-flex(center, space-between, row);
+    .licenseTitle {
+      font-family: $bebas;
+      font-weight: lighter;
+      font-size: 38px;
+    }
+    .licensePrice {
+      font-size: 32px;
+      font-weight: lighter;
+      font-family: $bebas;
+    }
+  }
+  .licenseCardBottom {
+    width: 100%;
+    background-color: $secondaryBackgroundColor;
+    border-radius: 0 0 $mainBorderRadius $mainBorderRadius;
+    padding: 32px;
+
+    @include d-flex(stretch, space-between, row);
+    .licenseInfo {
+      @include d-flex(center, center, row, 16px);
+      li {
+        background-color: $mainFontColor;
+        color: $mainBackgroundColor;
+        border-radius: $mainBorderRadius;
+        padding: 12px;
+        font-size: 18px;
+        font-weight: 600;
+      }
+    }
+    .purchaseLicense {
+      border: none;
+      outline: none;
+      background-color: $FontColor200;
+      color: $mainFontColor;
+      padding-left: 16px;
+      padding-right: 16px;
+      text-align: center;
+      font-size: 18px;
+      font-weight: 600;
+      border: $mainBorder;
+      border-radius: $mainBorderRadius;
+      cursor: pointer;
+      transition: $transition;
+      &:hover {
+        background-color: $mainFontColorHover;
+        color: $mainBackgroundColor;
+      }
+    }
+    .addedToCartButton {
+      border: none;
+      outline: none;
+      background-color: rgba(0, 126, 0, 0.5);
+      color: #eee;
+      padding-left: 16px;
+      padding-right: 16px;
+      text-align: center;
+      font-size: 18px;
+      font-weight: 600;
+      border: 1px solid $mainBackgroundColor;
+      border-radius: $mainBorderRadius;
+      cursor: not-allowed;
+    }
+  }
+}

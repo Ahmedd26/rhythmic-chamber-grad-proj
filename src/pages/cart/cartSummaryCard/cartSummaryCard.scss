@@ -1,0 +1,23 @@
+@import "../../../styles/functions";
+@import "../../../styles/variables";
+.cartSummaryCardComponent {
+  width: 100%;
+  @include d-flex(center, space-between);
+  .cartSummaryCardLeft {
+    @include d-flex(flex-start, center, row, 16px);
+    img {
+      width: 48px;
+      height: 48px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+    .cartSummaryUserName {
+      font-size: 20px;
+      font-weight: 600;
+    }
+  }
+  .cartSummaryCardRight {
+    font-size: 18px;
+    font-weight: 700;
+  }
+}

@@ -1,0 +1,78 @@
+@import "../../styles/functions";
+@import "../../styles/variables";
+
+.navbar {
+  background-color: $headerFooterBackgroundColor;
+  // width: 100%;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  @include d-flex(center, space-between, row);
+  color: $mainFontColor;
+  .logo {
+    @include d-flex(center, center, row, 16px);
+    img {
+      width: 2.75rem;
+      width: 2.75rem;
+    }
+    h1 {
+      font-family: $bebas;
+      font-weight: lighter;
+      font-size: 2.125rem;
+    }
+  }
+  nav {
+    ul {
+      @include d-flex(center, center, row, 1rem);
+
+      li {
+        position: relative;
+
+        a {
+          font-family: $bebas;
+          font-size: 1.5rem;
+          font-weight: lighter;
+          position: relative;
+          transition: $transition;
+          &:after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -3px; /* Adjust this value to position the underline */
+            width: 0;
+            height: 2px; /* Adjust this value to control the underline thickness */
+            background-color: $mainFontColor; /* Adjust this value to set the underline color */
+            transition: width 0.3s ease; /* Adjust the transition timing as needed */
+          }
+          &:hover {
+            color: $mainFontColorHover;
+          }
+          &:hover::after {
+            width: 100%;
+          }
+        }
+        .dropdown-menu {
+          background-color: $secondaryBackgroundColor;
+          border: $mainBorder;
+          border-radius: $mainBorderRadius;
+        }
+
+        .dropdown-menu .menu-item {
+          padding: 8px 16px;
+        }
+
+        .dropdown-menu .menu-item:hover {
+          background-color: #e0e0e0;
+          color: #ffffff;
+        }
+
+        .dropdown-menu .menu-item .icon {
+          margin-right: 8px;
+        }
+
+        .dropdown-menu .menu-item .text {
+          margin-left: 8px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,129 @@
+@import "../../../styles/functions";
+@import "../../../styles/variables";
+.wholePlan {
+  grid-column: span 4;
+  width: 100%;
+  @include d-flex(center, center, column, 32px);
+  .planContainer {
+    width: 100%;
+    border: $mainBorder;
+    border-radius: $mainBorderRadius;
+    background-color: $mainBackgroundColor;
+    box-shadow: $mainBoxShadow;
+    transition: 2s ease-in-out;
+    &:hover {
+      animation: elevate 2s ease-in-out infinite;
+      .planTopSection,
+      .planBottomSection {
+        color: $mainBackgroundColor;
+        background-color: $mainFontColor;
+      }
+      .planMidSection {
+        color: $mainFontColorHover;
+        background-color: $FontColor200;
+      }
+    }
+    .planTopSection,
+    .planMidSection,
+    .planBottomSection {
+      padding: 32px;
+
+      transition: $transition;
+    }
+    .planTopSection,
+    .planMidSection {
+      border-bottom: $mainBorder;
+    }
+    .planTopSection {
+      border-radius: $mainBorderRadius $mainBorderRadius 0 0;
+      @include d-flex(center, space-between, row);
+      .planTitle {
+        font-weight: lighter;
+        font-family: $bebas;
+        font-size: 44px;
+      }
+      .planPrice {
+        @include d-flex(center, center, column, 4px);
+        .pPrice {
+          font-size: 24px;
+          font-weight: lighter;
+          font-family: $bebas;
+        }
+        .pDuration {
+          font-size: 18px;
+          font-weight: lighter;
+          font-family: $bebas;
+        }
+      }
+    }
+    .planMidSection {
+      background-color: $secondaryBackgroundColor;
+      @include d-flex(flex-start, flex-start, column, 16px);
+      .featuresTitle {
+        font-weight: lighter;
+        font-family: $bebas;
+        font-size: 32px;
+      }
+      .featuresBullets {
+        margin: 0 0 0 16px;
+        padding: 0;
+        .featureBullet {
+          list-style-type: circle;
+          margin-bottom: 8px;
+          font-size: 18px;
+          font-weight: 400;
+        }
+      }
+    }
+    .planBottomSection {
+      border-radius: 0 0 $mainBorderRadius $mainBorderRadius;
+      @include d-flex(flex-start, flex-start, column, 16px);
+      .afterSale {
+        font-weight: lighter;
+        font-family: $bebas;
+        font-size: 32px;
+      }
+      .servicesBullets {
+        padding: 0;
+        margin: 0;
+        @include d-flex(flex-start, flex-start, row, 8px);
+        flex-wrap: wrap;
+        .serviceBullet {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+  .addPlanToCartButton {
+    width: 100%;
+    padding: 24px 0;
+    border: $mainBorder;
+    border-radius: $mainBorderRadius;
+    background-color: $mainBackgroundColor;
+    color: $mainFontColor;
+    transition: $transition;
+    cursor: pointer;
+    @include d-flex(center, center, row, 16px);
+    .addPlanToCartIcon {
+      font-size: 32px;
+    }
+    .addPlanToCartText {
+      font-size: 32px;
+      font-family: $bebas;
+      font-weight: lighter;
+    }
+    &:hover {
+      background-color: $mainFontColor;
+      color: $mainBackgroundColor;
+    }
+  }
+}
+@keyframes elevate {
+  0%,
+  100% {
+    transform: translateY(-8px);
+  }
+  50% {
+    transform: translateY(-16px);
+  }
+}

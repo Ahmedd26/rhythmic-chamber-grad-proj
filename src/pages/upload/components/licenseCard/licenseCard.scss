@@ -1,0 +1,95 @@
+@import "../../../../styles/functions";
+@import "../../../../styles/variables";
+$dummy: $mainBackgroundColor;
+$dummy: $secondaryBackgroundColor;
+$dummy: $inputBackgroundColor;
+$dummy: $mainFontColor;
+$dummy: $mainFontColorHover;
+$dummy: $bebas;
+$dummy: $transition;
+$dummy: $mainBorder;
+$dummy: $mainBorderRadius;
+$dummy: $mainBoxShadow;
+$dummy: $secondaryFontColor;
+$dummy: $FontColor200;
+$dummy: $FontColor400;
+$dummy: $FontColor600;
+$dummy: $FontColor800;
+.uploadLicenseCard {
+  padding: 32px;
+  border: $mainBorder;
+  border-radius: $mainBorderRadius;
+  width: 100%;
+  @include d-flex(center, space-between);
+  .uploadLicenseCardLeft {
+    @include d-flex(center, center, row, 16px);
+
+    .onOffSwitch {
+      width: 125px;
+      border: $mainBorder;
+      border-radius: 28px;
+      padding: 4px;
+      box-shadow: $blueBoxShadow;
+      transition: $transition;
+      cursor: pointer;
+      .toggler {
+        transition: $transition;
+        box-shadow: $blueBoxShadow;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+      }
+    }
+    .togglerOn,
+    .togglerOff {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: $transition;
+    }
+    .togglerOn {
+      justify-content: flex-end;
+      background-color: $mainFontColor;
+      .toggler {
+        background-color: $mainBackgroundColor;
+      }
+    }
+    .togglerOff {
+      justify-content: flex-start;
+      background-color: $secondaryBackgroundColor;
+      .toggler {
+        background-color: $mainFontColor;
+      }
+    }
+    .uploadLicenseCardLeftInfo {
+      h2 {
+        font-size: 24px;
+        font-weight: 600;
+      }
+      p {
+        font-size: 14px;
+        font-weight: 400;
+      }
+    }
+  }
+  .uploadLicenseCardRight {
+    @include d-flex(center, center, row, 16px);
+    .uploadLicenseCardRightPrice {
+      font-size: 24px;
+      font-weight: 600;
+    }
+    .uploadLicenseCardRightValue {
+      font-size: 18px;
+      font-weight: 400;
+    }
+    .uploadLicenseCardRightGuide {
+      font-size: 14px;
+      font-weight: 400;
+      color: $FontColor600;
+    }
+  }
+}
+
+.chosenLicense {
+  background-color: $secondaryBackgroundColor;
+}

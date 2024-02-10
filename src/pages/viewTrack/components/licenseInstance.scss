@@ -1,0 +1,51 @@
+@import "../../../styles/functions";
+@import "../../../styles/variables";
+.selectedLicense {
+  background-color: $mainFontColor !important;
+  color: $mainBackgroundColor !important;
+  transition: $transition;
+
+  .licenseInstanceHeading {
+    border-color: $mainBackgroundColor !important;
+    text-align: center;
+    width: 100%;
+  }
+}
+.licenseInstanceComponent {
+  min-width: 300px;
+  background-color: $secondaryBackgroundColor;
+  padding: 16px;
+  border: $mainBorder;
+  border-radius: $mainBorderRadius;
+  transition: $transition;
+  cursor: pointer;
+  &:hover {
+    color: $mainBackgroundColor;
+    background-color: $mainFontColor;
+    .licenseInstanceHeading {
+      transition: $transition;
+      border-color: $mainBackgroundColor;
+    }
+  }
+  @include d-flex(flex-start, flex-start, column, 16px);
+  .licenseInstanceHeading {
+    font-size: 32px;
+    font-weight: lighter;
+    font-family: $bebas;
+    padding-bottom: 8px;
+    border-bottom: $mainBorder;
+    transition: $transition;
+  }
+  .licenseInstanceComponentInfo {
+    width: 100%;
+    @include d-flex(center, space-between, row);
+    .licenseInstanceComponentProvide {
+      font-size: 14px;
+      font-weight: 400;
+    }
+    .licenseInstanceComponentPrice {
+      font-size: 14px;
+      font-weight: 600;
+    }
+  }
+}

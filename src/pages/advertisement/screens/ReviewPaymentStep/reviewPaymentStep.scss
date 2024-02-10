@@ -1,0 +1,144 @@
+@import "../../../../styles/functions";
+@import "../../../../styles/variables";
+$dummy: $mainBackgroundColor;
+$dummy: $secondaryBackgroundColor;
+$dummy: $inputBackgroundColor;
+$dummy: $mainFontColor;
+$dummy: $mainFontColorHover;
+$dummy: $bebas;
+$dummy: $transition;
+$dummy: $mainBorder;
+$dummy: $mainBorderRadius;
+$dummy: $mainBoxShadow;
+$dummy: $secondaryFontColor;
+$dummy: $FontColor200;
+$dummy: $FontColor400;
+$dummy: $FontColor600;
+$dummy: $FontColor800;
+.reviewPaymentStep {
+  color: $mainFontColor;
+  background-color: rgba($color: $mainBackgroundColor, $alpha: 0.5);
+  width: 100%;
+  grid-column: span 6;
+  border: $mainBorder;
+  border-radius: $mainBorderRadius;
+  .reviewPaymentStepHeading {
+    border-radius: $mainBorderRadius $mainBorderRadius 0 0;
+    border-bottom: $mainBorder;
+    padding: 32px;
+    background-color: rgba($color: $secondaryBackgroundColor, $alpha: 0.7);
+    font-size: 28px;
+    font-weight: lighter;
+    font-family: $bebas;
+    text-align: start;
+  }
+  .chosenProductReview {
+    padding: 32px;
+    width: 100%;
+    border-bottom: $mainBorder;
+    @include d-flex(flex-start, flex-start, column, 16px);
+    .trackToPromote {
+      font-size: 20px;
+      font-weight: 600;
+    }
+    .productCard {
+      border-radius: $mainBorderRadius;
+      background-color: rgba($color: $secondaryBackgroundColor, $alpha: 0.8);
+    }
+  }
+  .paymentProcess {
+    padding: 32px;
+    width: 100%;
+    border-bottom: $mainBorder;
+    button {
+      background-color: $mainBackgroundColor;
+      color: $mainFontColor;
+      border: $mainBorder;
+      border-radius: 40px;
+      padding: 16px 32px;
+      @include d-flex(center, center, row, 32px);
+      font-size: 18px;
+      .addPaymentMethod {
+        font-weight: 600;
+      }
+      transition: $transition;
+      cursor: pointer;
+      &:hover {
+        background-color: $mainFontColor;
+        color: $mainBackgroundColor;
+      }
+    }
+  }
+  .startAndEndDate {
+    padding: 32px;
+    width: 100%;
+    border-bottom: $mainBorder;
+    @include d-flex(flex-start, flex-start, column, 16px);
+    .dateStartFinish {
+      width: 100%;
+      @include d-flex(center, space-between);
+      .reviewDate {
+        font-size: 20px;
+        font-weight: 600;
+      }
+      .actualDate {
+        font-size: 20px;
+        font-weight: 500;
+        color: $mainFontColorHover;
+      }
+    }
+  }
+  .reviewCheckOut {
+    padding: 32px;
+    width: 100%;
+    border-bottom: $mainBorder;
+    @include d-flex(flex-start, flex-start, column, 16px);
+
+    .checkoutPromotion {
+      width: 100%;
+      @include d-flex(center, space-between);
+
+      .budgetPer {
+        font-size: 20px;
+        font-weight: 600;
+      }
+      .budgetPrice {
+        font-size: 20px;
+        font-weight: 500;
+        color: $mainFontColorHover;
+      }
+    }
+  }
+  .statements {
+    padding: 32px;
+    width: 100%;
+    border-bottom: $mainBorder;
+    @include d-flex(flex-start, flex-start, column, 8px);
+    .statement {
+      font-size: 14px;
+      a {
+        color: #5050cc;
+        font-weight: 600;
+      }
+    }
+  }
+  .navigationBackAndSubmit {
+    padding: 32px;
+    background-color: rgba($color: $secondaryBackgroundColor, $alpha: 0.7);
+    border-radius: 0 0 $mainBorderRadius $mainBorderRadius;
+    width: 100%;
+    @include d-flex(center, space-between, row);
+
+    .navBtn {
+      padding: 8px 16px;
+      font-size: 18px;
+      font-weight: 600;
+      color: $mainFontColor;
+      background-color: $mainBackgroundColor;
+      border: $mainBorder;
+      border-radius: $mainBorderRadius;
+      outline: none;
+      cursor: pointer;
+    }
+  }
+}

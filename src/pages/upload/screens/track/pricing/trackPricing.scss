@@ -1,0 +1,72 @@
+@import "../../../../../styles/functions";
+@import "../../../../../styles/variables";
+$dummy: $mainBackgroundColor;
+$dummy: $secondaryBackgroundColor;
+$dummy: $inputBackgroundColor;
+$dummy: $mainFontColor;
+$dummy: $mainFontColorHover;
+$dummy: $bebas;
+$dummy: $transition;
+$dummy: $mainBorder;
+$dummy: $mainBorderRadius;
+$dummy: $mainBoxShadow;
+$dummy: $secondaryFontColor;
+$dummy: $FontColor200;
+$dummy: $FontColor400;
+$dummy: $FontColor600;
+$dummy: $FontColor800;
+.trackPricingStep {
+  width: 100%;
+  margin: 64px 0;
+  @include d-flex(flex-start, flex-start, column, 0);
+  .trackPricingHeading {
+    width: fit-content;
+    padding: 32px 96px 48px 64px;
+    background-color: $secondaryBackgroundColor;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 48px;
+    font-size: 28px;
+    font-weight: 600;
+    @include d-flex(center, center);
+    box-shadow: $blueBoxShadow;
+  }
+  .mainTrackPricingContainer {
+    margin-top: -16px;
+    width: 100%;
+    padding: 64px;
+    background-color: $mainBackgroundColor;
+    border-radius: $mainBorderRadius;
+    @include d-flex(flex-start, flex-start, column, 32px);
+
+    .mainTrackPricingContent {
+      @include d-flex(flex-start, flex-start, column, 32px);
+      width: 100%;
+      .specialPricingHeading {
+        font-size: 32px;
+        font-weight: 600;
+      }
+    }
+    .navigationButtonsContainer {
+      width: 100%;
+      margin-top: 32px;
+      @include d-flex(center, space-between);
+      .navBtn {
+        padding: 12px;
+        width: 15%;
+        background-color: $secondaryBackgroundColor;
+        color: $mainFontColor;
+        border: $mainBorder;
+        border-radius: $mainBorderRadius;
+        font-size: 18px;
+        font-weight: 600;
+        cursor: pointer;
+        outline: none;
+        transition: $transition;
+        &:hover {
+          color: $mainBackgroundColor;
+          background-color: $mainFontColor;
+        }
+      }
+    }
+  }
+}

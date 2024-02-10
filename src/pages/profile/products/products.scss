@@ -1,0 +1,250 @@
+@import "../../../styles/functions";
+@import "../../../styles/variables";
+.products {
+  min-height: 100vh;
+  margin: 64px 0;
+  color: $mainFontColor;
+  @include d-grid(12, 16px);
+  .filters {
+    height: fit-content;
+    grid-column: span 3;
+    background-color: $mainBackgroundColor;
+    border: $mainBorder;
+    border-radius: $mainBorderRadius;
+    padding: 24px;
+    hr {
+      margin: 16px 0;
+      border-color: $mainFontColor;
+      width: 100%;
+    }
+    .top {
+      padding: 16px;
+      border-radius: 64px;
+      transition: $transition;
+      @include d-flex(flex-start, center, row, 16px);
+      .tl {
+        width: 25%;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: 50%;
+        }
+      }
+      .tr {
+        width: 75%;
+        height: 100%;
+        @include d-flex(flex-start, space-between, column);
+        h1 {
+          font-size: 18px;
+          font-weight: 600;
+        }
+        span {
+          font-size: 12px;
+          font-weight: 400;
+        }
+      }
+      &:hover {
+        background-color: $secondaryBackgroundColor;
+      }
+    }
+    .filtersHeading {
+      font-size: 40px;
+      text-align: start;
+      font-weight: 400;
+      font-family: $bebas;
+    }
+  }
+  .content {
+    grid-column: span 9;
+    .showProductsHeading {
+      font-size: 32px;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+    .horizontalCardsContainer {
+      @include d-flex(center, center, column, 16px);
+      // .horizontalCard {
+      //   width: 100%;
+      //   @include d-grid(12, 16px);
+      //   align-items: center;
+      //   padding: 16px;
+      //   background-color: $mainBackgroundColor;
+      //   border: $mainBorder;
+      //   border-radius: $mainBorderRadius;
+      //   .horCardItemOne {
+      //     grid-column: span 1;
+      //     font-size: 32px;
+      //     font-weight: 400;
+      //     font-family: $bebas;
+      //     justify-self: center;
+      //   }
+      //   .horCardItemTwo {
+      //     grid-column: span 1;
+      //     display: flex;
+      //     align-items: center;
+      //     img {
+      //       width: 100%;
+      //       height: 100%;
+      //       aspect-ratio: 1 1;
+      //       object-fit: cover;
+      //     }
+      //   }
+      //   .horCardItemThree {
+      //     grid-column: span 3;
+      //     height: 100%;
+      //     @include d-flex(flex-start, space-between, column);
+      //     .productTitle {
+      //       font-size: 18px;
+      //     }
+      //     .crdInf {
+      //       width: 100%;
+      //       @include d-flex(center, flex-start, row, 24px);
+      //       .info {
+      //         font-size: 12px;
+      //       }
+      //     }
+      //   }
+      //   .horCardItemFour {
+      //     grid-column: span 4;
+      //     width: 100%;
+      //     height: 100%;
+      //     @include d-flex(center, center, row, 12px);
+      //     flex-wrap: wrap;
+      //   }
+      //   .horCardItemFive {
+      //     grid-column: span 1;
+      //     width: 100%;
+      //     height: 100%;
+      //     display: flex;
+      //     align-items: center;
+      //     .freeDownloadButton {
+      //       width: 100%;
+      //       font-size: 12px;
+      //       font-weight: 600;
+      //       background-color: $secondaryBackgroundColor;
+      //       @include d-flex(center, space-between, row);
+      //       padding: 4px 8px;
+      //       border-radius: 20px;
+      //       transition: $transition;
+      //       cursor: default;
+      //       &:hover {
+      //         background-color: $FontColor400;
+      //       }
+      //     }
+      //   }
+      //   .horCardItemSix {
+      //     grid-column: span 1;
+      //     width: 100%;
+      //     height: 100%;
+      //     display: flex;
+      //     align-items: center;
+      //     .addToCartButton {
+      //       width: 100%;
+      //       height: 80%;
+      //       @include d-flex(center, center, column, 8px);
+      //       background-color: transparent;
+      //       border: $mainBorder;
+      //       border-radius: $mainBorderRadius;
+      //       transition: $transition;
+      //       cursor: pointer;
+      //       .cartIco {
+      //         font-size: 24px;
+      //       }
+      //       span {
+      //         font-size: 14px;
+      //         font-weight: 600;
+      //         display: none;
+      //         text-align: center;
+      //       }
+      //       &:hover {
+      //         background-color: $mainFontColor;
+      //         color: $mainBackgroundColor;
+      //         .cartIco {
+      //           display: none;
+      //         }
+      //         span {
+      //           display: inline-block;
+      //         }
+      //       }
+      //     }
+      //   }
+      //   .horCardItemSeven {
+      //     grid-column: span 1;
+      //     // background-color: #f0f;
+      //     width: 100%;
+      //     height: 100%;
+      //     display: flex;
+      //     align-items: center;
+      //   }
+      // }
+    }
+  }
+}
+
+.filterTitle {
+  @include d-flex(center, flex-start, row, 8px);
+  color: $mainFontColor;
+}
+.productFilter {
+  background-color: transparent;
+  .muiCheckBox {
+    color: $mainFontColor;
+    &:checked {
+      background-color: #f00;
+    }
+  }
+  .productFilterType {
+    color: $mainFontColor;
+  }
+}
+
+.pt {
+  width: 100%;
+  @include d-flex(center, center, row, 12px);
+  .field {
+    @include d-flex(center, center, row, 8px);
+    .dollarIco {
+      font-size: 12px;
+    }
+    input {
+      width: 100%;
+      border: none;
+      border-radius: $mainBorderRadius;
+      outline: none;
+      background-color: $secondaryBackgroundColor;
+      padding: 8px 12px;
+      color: $mainFontColor;
+      caret-color: $mainFontColor;
+      font-size: 12px;
+      &:focus {
+        box-shadow: 0px 0px 5px 0.5px $FontColor200;
+      }
+    }
+  }
+}
+
+// MUI
+
+.css-1iknox0-MuiAccordionDetails-root {
+  padding: 8px 16px 16px;
+  padding: 16px;
+  background: $inputBackgroundColor;
+  border-top: $mainBorder;
+  color: $mainFontColor;
+}
+
+// title BckColor
+.css-edq8ae-MuiPaper-root-MuiAccordion-root {
+  background: $secondaryBackgroundColor !important;
+  border-radius: $mainBorderRadius;
+}
+// CheckBox Checked
+.css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root.Mui-checked,
+.css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root.MuiCheckbox-indeterminate {
+  color: #fcb14b !important;
+}
+
+.css-1ka5eyc-MuiPaper-root-MuiMenu-paper-MuiPopover-paper {
+  background-color: #232323 !important;
+}

@@ -1,0 +1,157 @@
+@import "./functions";
+@import "./variables";
+
+html {
+  ::-webkit-scrollbar {
+    width: 4px !important;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: $secondaryBackgroundColor;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: $mainBackgroundColor;
+    border-radius: 4px;
+    &:hover {
+      background-color: $mainFontColor;
+    }
+  }
+  ::selection {
+    background-color: $mainFontColor;
+    color: $mainBackgroundColor;
+  }
+}
+body {
+  font-family: "Poppins", sans-serif;
+  /* height: 100vh; */
+  background-color: $bodyBackgroundColor;
+  position: relative;
+  scroll-behavior: smooth;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../assets/images/Texture.jpg");
+  background-size: cover;
+  opacity: 0.5;
+  background-repeat: repeat-y;
+  background-attachment: fixed;
+  z-index: -550;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+  &:visited {
+    color: inherit;
+  }
+}
+ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+// .container {
+//   margin-left: auto;
+//   margin-right: auto;
+//   padding-left: 96px;
+//   padding-right: 96px;
+//   max-width: 1200px;
+//   /* Adjust this value according to your design requirements */
+// }
+/* Media Queries */
+
+/* For screen sizes smaller than 320px (e.g., mobile S) */
+@media screen and (max-width: 319px) {
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+/* For screen sizes between 320px and 375px (e.g., mobile M) */
+@media screen and (min-width: 320px) and (max-width: 375px) {
+  .container {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+/* For screen sizes between 375px and 425px (e.g., mobile L) */
+@media screen and (min-width: 375px) and (max-width: 425px) {
+  .container {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
+/* For screen sizes between 425px and 768px (e.g., tablets) */
+@media screen and (min-width: 425px) and (max-width: 768px) {
+  .container {
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+}
+
+/* For screen sizes between 768px and 1024px (e.g., laptops) */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .container {
+    padding-left: 64px;
+    padding-right: 64px;
+  }
+}
+
+/* For screen sizes between 1024px and 1440px (e.g., large laptops) */
+@media screen and (min-width: 1024px) and (max-width: 1440px) {
+  .container {
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+}
+
+/* For screen sizes larger than 1440px (e.g., 4K displays) */
+@media screen and (min-width: 1440px) {
+  .container {
+    padding-left: 96px;
+    padding-right: 96px;
+  }
+}
+
+/* Mobile Devices */
+@media (max-width: 480px) {
+  html {
+    font-size: 4px;
+  }
+}
+
+/* Low resolution Tablets and iPads */
+@media (min-width: 481px) and (max-width: 767px) {
+  html {
+    font-size: 8px;
+  }
+}
+
+/* Tablets iPads (Portrait) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  html {
+    font-size: 10px;
+  }
+}
+
+/* Laptops and Desktops */
+@media (min-width: 1025px) and (max-width: 1280px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+/* Big boi Monitors */
+@media (min-width: 1281px) {
+  html {
+    font-size: 16px;
+  }
+}

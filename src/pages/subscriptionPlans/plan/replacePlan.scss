@@ -1,0 +1,74 @@
+@import "../../../styles/functions";
+@import "../../../styles/variables";
+$dummy: $mainBackgroundColor;
+$dummy: $secondaryBackgroundColor;
+$dummy: $inputBackgroundColor;
+$dummy: $mainFontColor;
+$dummy: $mainFontColorHover;
+$dummy: $bebas;
+$dummy: $transition;
+$dummy: $mainBorder;
+$dummy: $mainBorderRadius;
+$dummy: $mainBoxShadow;
+$dummy: $secondaryFontColor;
+$dummy: $FontColor200;
+$dummy: $FontColor400;
+$dummy: $FontColor600;
+$dummy: $FontColor800;
+.replacePlan {
+  background-color: $mainFontColor;
+  box-shadow: $blueBoxShadow;
+  padding: 32px;
+  border: $mainBorder;
+  border-radius: $mainBorderRadius;
+  width: 50%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 99;
+  .replacePlanContent {
+    @include d-flex(center, center, column, 24px);
+    .doneIco {
+      font-size: 64px;
+    }
+    .successAddedPlan {
+      font-size: 48px;
+      font-weight: lighter;
+      font-family: $bebas;
+    }
+    .warningMessage {
+      font-size: 18px;
+      font-weight: 400;
+      text-align: center;
+      margin-bottom: 16px;
+      width: calc(100% * (8 / 12));
+      b {
+        color: $secondaryBackgroundColor;
+      }
+    }
+    .planCartActionButtons {
+      width: 100%;
+      @include d-grid(12, 16px);
+      .dismissButton,
+      .replaceButton {
+        width: 100%;
+        font-size: 16px;
+        font-weight: 600;
+        background-color: $mainBackgroundColor;
+        color: $mainFontColor;
+        border-radius: $mainBorderRadius;
+        padding: 16px;
+        border: none;
+        outline: none;
+        cursor: pointer;
+      }
+      .dismissButton {
+        grid-column: 3 / span 3;
+      }
+      .replaceButton {
+        grid-column: 8 / span 3;
+      }
+    }
+  }
+}

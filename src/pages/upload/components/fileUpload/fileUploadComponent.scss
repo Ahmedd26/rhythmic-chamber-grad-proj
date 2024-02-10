@@ -1,0 +1,72 @@
+@import "../../../../styles/functions";
+@import "../../../../styles/variables";
+.uploadFileCard {
+  // @include d-flex(center, space-between);
+  @include d-grid(12, 16px);
+  width: 100%;
+  padding: 32px;
+  border: $mainBorder;
+  border-radius: $mainBorderRadius;
+  .uploadFileCardLeft {
+    width: 100%;
+    grid-column: span 6;
+    @include d-flex(flex-start, flex-start, row, 16px);
+    .leftIco {
+      font-size: 40px;
+      width: 96px;
+      height: 96px;
+      @include d-flex(center, center);
+      background-color: $secondaryBackgroundColor;
+      border-radius: 50%;
+    }
+    .audioCardText {
+      @include d-flex(flex-start, center, column, 16px);
+    }
+  }
+
+  .uploadFileCardRight {
+    width: 100%;
+    grid-column: span 6;
+    @include d-flex(center, flex-end, row, 32px);
+    .uploadFileCardINFO {
+      width: 50%;
+      padding: 16px;
+      background-color: $secondaryBackgroundColor;
+      border-radius: $mainBorderRadius;
+      @include d-flex(flex-start, flex-start, column, 8px);
+      .uploadedFileName {
+        font-size: 18px;
+        font-weight: 600;
+        padding-bottom: 8px;
+        border-bottom: $mainBorder;
+      }
+      .audioFileName {
+        font-size: 14px;
+        font-weight: 600;
+      }
+    }
+    .uploadButtonContainer {
+      #untaggedAudio,
+      .hideAudioInput {
+        display: none;
+      }
+      .uploadBtn {
+        color: $mainFontColor;
+        background-color: $secondaryBackgroundColor;
+        padding: 16px 32px;
+
+        @include d-flex(center, center, row, 16px);
+        font-size: 18px;
+        cursor: pointer;
+        transition: $transition;
+        &:hover {
+          background-color: $mainFontColor;
+          color: $mainBackgroundColor;
+        }
+        span {
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}

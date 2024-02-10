@@ -1,0 +1,121 @@
+@import "../../../../styles/functions";
+@import "../../../../styles/variables";
+$dummy: $mainBackgroundColor;
+$dummy: $secondaryBackgroundColor;
+$dummy: $inputBackgroundColor;
+$dummy: $mainFontColor;
+$dummy: $mainFontColorHover;
+$dummy: $bebas;
+$dummy: $transition;
+$dummy: $mainBorder;
+$dummy: $mainBorderRadius;
+$dummy: $mainBoxShadow;
+$dummy: $secondaryFontColor;
+$dummy: $FontColor200;
+$dummy: $FontColor400;
+$dummy: $FontColor600;
+$dummy: $FontColor800;
+.paymentCard {
+  width: 40%;
+  position: absolute;
+  top: 14.5%;
+  left: 25%;
+  transform: translateX(-50%);
+  background-color: $mainBackgroundColor;
+  border: $mainBorder;
+  border-radius: $mainBorderRadius;
+  color: $mainFontColor;
+  @include d-flex(flex-start, flex-start, column, 0px);
+  .paymentCardTopContainer {
+    border-bottom: $mainBorder;
+    @include d-flex(center, center, column, 16px);
+    padding: 32px;
+    width: 100%;
+    .paymentCardTopTop {
+      @include d-flex(center, center, row, 16px);
+      .RCLogo {
+        width: 52.8px;
+        height: 52.8px;
+        object-fit: cover;
+      }
+      .RCHeading {
+        font-size: 40px;
+        font-family: $bebas;
+        font-weight: lighter;
+      }
+    }
+    .paymentCardTopBottom {
+      font-size: 18px;
+      font-weight: 600;
+      color: $FontColor600;
+    }
+  }
+  .paymentCardContent {
+    padding: 32px;
+    background-color: $secondaryBackgroundColor;
+    width: 100%;
+    border-radius: 0 0 $mainBorderRadius $mainBorderRadius;
+
+    @include d-flex(flex-start, flex-start, column, 32px);
+    .creditCardInfo {
+      @include d-flex(flex-start, flex-start, column, 16px);
+      width: 100%;
+      input {
+        width: 100%;
+        padding: 16px 32px;
+        outline: none;
+        border: $mainBorder;
+        border-radius: $mainBorderRadius;
+        background-color: $mainBackgroundColor;
+        caret-color: $mainFontColor;
+        color: $mainFontColor;
+        &::placeholder {
+          color: $mainFontColor;
+        }
+      }
+      .inputDiv {
+        @include d-grid(12, 16px);
+        input {
+          width: 100%;
+          &:nth-child(1) {
+            grid-column: span 8;
+          }
+          &:nth-child(2) {
+            grid-column: span 4;
+          }
+        }
+      }
+    }
+    .agreement {
+      font-size: 14px;
+      font-weight: 600;
+    }
+    .cardInfoActions {
+      width: 100%;
+      @include d-grid(12, 16px);
+      .addCardInfoBtn {
+        width: 100%;
+        padding: 16px 0;
+        font-size: 18px;
+        font-weight: 600;
+        color: $mainFontColor;
+        background-color: $mainBackgroundColor;
+        border: $mainBorder;
+        border-radius: $mainBorderRadius;
+        outline: none;
+        cursor: pointer;
+        transition: $transition;
+        &:hover {
+          background-color: $mainFontColor;
+          color: $mainBackgroundColor;
+        }
+        &:nth-child(1) {
+          grid-column: span 4;
+        }
+        &:nth-child(2) {
+          grid-column: span 8;
+        }
+      }
+    }
+  }
+}

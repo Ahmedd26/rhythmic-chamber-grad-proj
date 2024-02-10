@@ -1,0 +1,52 @@
+@import "../../../../styles/functions";
+@import "../../../../styles/variables";
+.enrolledCard {
+  max-width: 350px;
+  padding: 14px;
+  background-color: $secondaryBackgroundColor;
+  border: $mainBorder;
+  border-radius: $mainBorderRadius;
+  @include d-flex(flex-start, flex-start, row, 16px);
+  .enLeft {
+    img {
+      width: 64px;
+      height: 64px;
+      border-radius: $mainBorderRadius;
+    }
+  }
+  .enRight {
+    height: 64px;
+    @include d-flex(flex-start, space-between, column);
+    .enRTop {
+      h1 {
+        font-size: 14px;
+        margin: 0;
+        max-width: 230px;
+        max-height: 20px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+    .enRBottom {
+      width: 100%;
+      @include d-flex(center, space-between, row);
+      .dueDate {
+        font-size: 12px;
+        font-weight: 400;
+      }
+      .viewChallengeLink {
+        font-size: 12px;
+        padding: 4px 8px;
+        font-weight: 500;
+        background-color: $mainBackgroundColor;
+        border-radius: $mainBorderRadius;
+        border: $mainBorder;
+        transition: $transition;
+        &:hover {
+          color: $mainBackgroundColor;
+          background-color: $mainFontColor;
+        }
+      }
+    }
+  }
+}

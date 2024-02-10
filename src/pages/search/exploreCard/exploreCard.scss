@@ -1,0 +1,63 @@
+@import "../../../styles/functions";
+@import "../../../styles/variables";
+.card {
+  @include d-flex(center, flex-start, column, 0);
+  width: 100%;
+  .image {
+    width: 100%;
+    // height: 19.5rem;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: $mainBorderRadius $mainBorderRadius 0 0;
+    }
+  }
+  .text {
+    color: $mainFontColor;
+    background-color: $mainBackgroundColor;
+    padding: 1rem;
+    width: 100%;
+    @include d-flex(flex-start, flex-start, column, 0.5rem);
+    .exploreCardInfo {
+      @include d-flex(center, flex-start, row, 0.5rem);
+      .dot {
+        font-size: 0.25rem;
+      }
+      .price {
+        font-size: 0.75rem;
+        font-weight: 600;
+      }
+      .download {
+        padding: 0.25rem 0.5rem;
+        background-color: $secondaryBackgroundColor;
+        border-radius: 1rem;
+        @include d-flex(center, center, row, 0.5rem);
+        span {
+          font-size: 0.75rem;
+        }
+        .freeDownload {
+          font-size: 0.625rem;
+        }
+        cursor: pointer;
+        transition: $transition;
+        &:hover {
+          color: $secondaryBackgroundColor;
+          background-color: $mainFontColor;
+        }
+      }
+      .tempo {
+        font-size: 0.75rem;
+      }
+    }
+    .title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 0;
+    }
+    .author {
+      font-size: 1rem;
+      font-weight: 400;
+    }
+  }
+}

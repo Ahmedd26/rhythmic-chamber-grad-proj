@@ -1,0 +1,163 @@
+@import "../../../../../styles/functions";
+@import "../../../../../styles/variables";
+.basicInfoStep {
+  width: 100%;
+  margin: 64px 0;
+  @include d-flex(flex-start, flex-start, column, 0);
+  .basicInfoHeading {
+    width: fit-content;
+    padding: 32px 96px 48px 64px;
+    background-color: $secondaryBackgroundColor;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 48px;
+    font-size: 28px;
+    font-weight: 600;
+    @include d-flex(center, center);
+    box-shadow: $blueBoxShadow;
+  }
+  .mainBasicStepContainer {
+    margin-top: -16px;
+    width: 100%;
+    padding: 64px;
+    background-color: $mainBackgroundColor;
+    border-radius: $mainBorderRadius;
+    @include d-flex(flex-start, flex-start, column, 32px);
+    .leftRightContainer {
+      @include d-grid(12, 16px);
+      width: 100%;
+
+      .leftImageContainer {
+        grid-column: span 4;
+        width: 100%;
+        .uploadArtworkLabel {
+          cursor: pointer;
+          @include d-flex(center, center, column, 0);
+          border-radius: $mainBorderRadius;
+          transition: $transition;
+          .imagePreview {
+            border-radius: $mainBorderRadius $mainBorderRadius 0 0;
+            width: 100%;
+            aspect-ratio: 1 1;
+            object-fit: cover;
+            transition: $transition;
+            position: relative;
+          }
+          #uploadArtwork {
+            display: none;
+          }
+          .uploadArtworkButton {
+            width: 100%;
+            padding: 32px 0;
+            border-radius: 0 0 $mainBorderRadius $mainBorderRadius;
+            background-color: $secondaryBackgroundColor;
+            @include d-flex(center, center, row, 32px);
+            transition: $transition;
+            .upIco {
+              font-size: 24px;
+            }
+            .uploadArtworkButtonText {
+              font-family: $bebas;
+              font-weight: lighter;
+              font-size: 28px;
+            }
+            .uploadArtworkButtonError {
+              font-weight: 600;
+              font-size: 16px;
+              max-width: 80%;
+              color: $FontColor400;
+              text-align: center;
+            }
+          }
+          &:hover {
+            .uploadArtworkButton {
+              color: $mainBackgroundColor;
+              background-color: $mainFontColor;
+            }
+            .uploadArtworkButtonError {
+              color: $mainBackgroundColor;
+            }
+          }
+        }
+      }
+      .rightInputsContainer {
+        width: 100%;
+        grid-column: span 8;
+        padding-left: 16px;
+        @include d-flex(flex-start, flex-start, column, 32px);
+        .titleAndDescContainer {
+          width: 100%;
+          @include d-flex(flex-start, flex-start, column, 8px);
+          label {
+            font-size: 24px;
+            font-weight: 600;
+          }
+          input,
+          textarea {
+            width: 100%;
+            padding: 8px 16px;
+            background-color: $secondaryBackgroundColor;
+            color: $mainFontColor;
+            caret-color: $mainFontColor;
+            border: $mainBorder;
+            border-radius: $mainBorderRadius;
+            outline: none;
+            font-size: 18px;
+          }
+          textarea {
+            resize: vertical;
+            padding: 16px;
+          }
+        }
+        .typeAndReleaseDateContainer {
+          width: 100%;
+          .basic-multi-select,
+          .css-b62m3t-container {
+            width: 100%;
+          }
+          @include d-flex(center, center, row, 32px);
+          .typeRelease {
+            width: 100%;
+            @include d-flex(flex-start, flex-start, column, 8px);
+            label {
+              font-size: 24px;
+              font-weight: 600;
+            }
+            input {
+              width: 100%;
+              background-color: $secondaryBackgroundColor;
+              color: $mainFontColor;
+              caret-color: $mainFontColor;
+              border: $mainBorder;
+              border-radius: $mainBorderRadius;
+              padding: 8px 16px;
+              font-size: 18px;
+              outline: none;
+            }
+          }
+        }
+      }
+    }
+    .navigationButtonsContainer {
+      width: 100%;
+      margin-top: 32px;
+      @include d-flex(center, space-between);
+      .navBtn {
+        padding: 12px;
+        width: 15%;
+        background-color: $secondaryBackgroundColor;
+        color: $mainFontColor;
+        border: $mainBorder;
+        border-radius: $mainBorderRadius;
+        font-size: 18px;
+        font-weight: 600;
+        cursor: pointer;
+        outline: none;
+        transition: $transition;
+        &:hover {
+          color: $mainBackgroundColor;
+          background-color: $mainFontColor;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,74 @@
+@import "../../../../styles/functions";
+@import "../../../../styles/variables";
+$dummy: $mainBackgroundColor;
+$dummy: $secondaryBackgroundColor;
+$dummy: $inputBackgroundColor;
+$dummy: $mainFontColor;
+$dummy: $mainFontColorHover;
+$dummy: $bebas;
+$dummy: $transition;
+$dummy: $mainBorder;
+$dummy: $mainBorderRadius;
+$dummy: $mainBoxShadow;
+$dummy: $secondaryFontColor;
+$dummy: $FontColor200;
+$dummy: $FontColor400;
+$dummy: $FontColor600;
+$dummy: $FontColor800;
+
+.chooseProduct {
+  width: 30%;
+  position: absolute;
+  top: 14.5%;
+  left: 30%;
+  transform: translateX(-50%);
+  background-color: $mainBackgroundColor;
+  padding: 32px;
+  border: $mainBorder;
+  border-radius: $mainBorderRadius;
+  color: $mainFontColor;
+  @include d-flex(flex-start, flex-start, column, 32px);
+
+  .chooseTitle {
+    width: 100%;
+    font-size: 32px;
+    font-weight: 400;
+    font-family: $bebas;
+  }
+  .productCardsContainer {
+    width: 100%;
+    max-height: 448px;
+    overflow-y: auto;
+    @include d-flex(flex-start, flex-start, column, 16px);
+  }
+}
+
+// ProductCard
+.productCard {
+  width: calc(100% - 8px);
+  padding: 16px;
+  background-color: $secondaryBackgroundColor;
+
+  @include d-flex(flex-start, flex-start, row, 16px);
+  .productCardArtwork {
+    width: 64px;
+    height: 64px;
+    object-fit: cover;
+    aspect-ratio: 1 1;
+  }
+  .productCardInfo {
+    @include d-flex(flex-start, flex-start, column, 8px);
+    h3 {
+      font-size: 18px;
+      font-weight: 600;
+      max-width: 260px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    span {
+      font-weight: 400;
+      font-size: 14px;
+    }
+  }
+}

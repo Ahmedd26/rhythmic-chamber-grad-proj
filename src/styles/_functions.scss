@@ -1,0 +1,12 @@
+@mixin d-flex($align: center, $justify: center, $direction: row, $gap: 0) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+  flex-direction: $direction;
+  gap: $gap;
+}
+@mixin d-grid($columns: 12, $gap: 0) {
+  display: grid;
+  grid-template-columns: repeat($columns, minmax(0, 1fr));
+  gap: $gap;
+}

@@ -1,0 +1,74 @@
+@import "../../../styles/functions";
+@import "../../../styles/variables";
+.landingCard {
+  @include d-flex(center, center, column, 0);
+  min-width: 100px;
+  .image {
+    width: 20.25rem;
+    height: 20.25rem !important;
+    img {
+      border-radius: $mainBorderRadius $mainBorderRadius 0 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  .image.fallback-image {
+    width: 20.25rem;
+    height: 20.25rem !important;
+    img {
+      border-radius: $mainBorderRadius $mainBorderRadius 0 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(100%);
+    }
+  }
+  .text {
+    @include d-flex(flex-start, flex-start, column, 1rem);
+    background-color: $secondaryBackgroundColor;
+    border-radius: 0 0 $mainBorderRadius $mainBorderRadius;
+    min-height: 6rem;
+    width: 100%;
+    height: 100%;
+    padding: 16px;
+    .title {
+      font-size: 1.625rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      max-width: 18.25rem;
+    }
+    .landingCardInfo {
+      width: 100%;
+      // @include d-flex(center, space-between, row);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-direction: row;
+      .author {
+        max-width: 8rem;
+      }
+      .tempo {
+        max-width: 6rem;
+      }
+      .author,
+      .tempo {
+        font-size: 1rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+  }
+  .text.fallback-text {
+    .title.fallback-title {
+      color: grey;
+    }
+    .landingCardInfo.fallback-info {
+      span {
+        color: grey;
+      }
+    }
+  }
+}

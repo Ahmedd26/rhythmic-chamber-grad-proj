@@ -1,0 +1,234 @@
+@import "../../styles/functions";
+@import "../../styles/variables";
+$bg-image: "../../assets/images/Mixing Services.jpg";
+
+.home {
+  @include d-flex(flex-start, center, column, 8rem);
+  margin-bottom: 8rem;
+  .sectionOne {
+    @include d-flex(flex-start, flex-start, row);
+    height: calc(100vh - 6.75rem);
+    .leftSide {
+      @include d-flex(flex-start, flex-start, column, 2rem);
+      flex: 4;
+      width: 100%;
+      height: 100%;
+      padding: 4rem 6rem;
+      color: $mainFontColor;
+      background-color: $mainBackgroundColor;
+      //   background-color: #fff;
+      p {
+        font-size: 2.125rem;
+        font-weight: lighter;
+        font-family: $bebas;
+      }
+      .search {
+        width: 100%;
+        @include d-flex(center, center, row, 1rem);
+        padding: 1rem;
+        border-radius: $mainBorderRadius;
+        border: $mainBorder;
+        background-color: $secondaryBackgroundColor;
+        .searchIcon {
+          font-size: 1.5rem;
+        }
+        input {
+          width: 100%;
+          border: none;
+          outline: none;
+          font-size: 1rem;
+          background-color: transparent;
+          caret-color: $mainFontColor;
+          color: $mainFontColor;
+          &::placeholder {
+            color: $mainFontColor;
+          }
+        }
+      }
+      .links {
+        @include d-flex(center, center, row, 2rem);
+        width: 100%;
+        .link {
+          width: 100%;
+          padding: 1rem;
+          background-color: $secondaryBackgroundColor;
+          border: $mainBorder;
+          border-radius: $mainBorderRadius;
+          @include d-flex(center, center, row, 1rem);
+          img {
+            width: 2rem;
+            height: 2rem;
+          }
+          span {
+            font-size: 1.25rem;
+            font-weight: 600;
+          }
+        }
+      }
+    }
+    .rightSide {
+      flex: 6;
+      width: 100%;
+      height: 100%;
+      background-image: url($bg-image);
+      background-size: cover;
+      background-position: center;
+      @include d-flex(center, center);
+      .text {
+        text-align: center;
+        @include d-flex(center, center, column, 2rem);
+        width: 75%;
+        background-color: rgba(16, 16, 16, 0.7);
+        padding: 4rem;
+        font-size: 1.25rem;
+        p {
+          color: $mainFontColor;
+        }
+        h4 {
+          color: $mainFontColor;
+        }
+      }
+    }
+  }
+  .announcementSection {
+    width: 100%;
+    .container {
+      width: 100%;
+    }
+  }
+  .sectionTwo {
+    width: 100%;
+    .container {
+      width: 100%;
+      @include d-flex(flex-start, center, column, 2rem);
+      .row {
+        width: 100%;
+        @include d-flex(stretch, center, row, 2rem);
+        color: $mainFontColor;
+        &:nth-child(1) {
+          .text {
+            border-radius: 0 1rem 0 0;
+          }
+          .image img {
+            border-radius: 1rem 0 0 0;
+          }
+        }
+        &:nth-child(4) {
+          .text {
+            border-radius: 0 0 0 1rem;
+          }
+          .image img {
+            border-radius: 0 0 1rem 0;
+          }
+        }
+        .image,
+        .text {
+          box-shadow: 0px 5px 10px 5px rgba(10, 10, 10, 0.5);
+        }
+        .image {
+          flex: 3;
+          img {
+            width: 21rem;
+            height: 16.5rem;
+            object-fit: cover;
+          }
+        }
+        .text {
+          width: 100%;
+          flex: 9;
+          background-color: $mainBackgroundColor;
+          padding: 4rem;
+          @include d-flex(flex-start, flex-start, column, 2rem);
+          h1 {
+            font-weight: lighter;
+            font-family: $bebas;
+            font-size: 3.0625rem;
+          }
+          p {
+            font-size: 1.8125rem;
+            font-weight: 400;
+          }
+        }
+      }
+    }
+  }
+  .sectionThree {
+    color: $mainFontColor;
+    width: 100%;
+    .container {
+      width: 100%;
+      @include d-flex(flex-start, center, column, 4rem);
+      .top,
+      .bottom {
+        @include d-flex(flex-start, center, column, 2rem);
+        h1 {
+          font-size: 49px;
+          font-weight: lighter;
+          font-family: $bebas;
+        }
+        .cardContainer {
+          @include d-flex(center, center, row, 1rem);
+        }
+      }
+    }
+  }
+  .sectionFour {
+    width: 100%;
+    .container {
+      width: 100%;
+      .content {
+        width: 100%;
+        padding: 4rem;
+        background-color: $mainBackgroundColor;
+        border: $mainBorder;
+        border-radius: $mainBorderRadius;
+        @include d-flex(center, space-between);
+        .left {
+          @include d-flex(flex-start, flex-start, column, 2rem);
+          color: $mainFontColor;
+          h1 {
+            font-size: 49px;
+            font-weight: lighter;
+            font-family: $bebas;
+          }
+          .links {
+            @include d-flex(center, center, row, 2rem);
+            .regLink {
+              padding: 1rem 0;
+              max-width: 12rem;
+              min-width: 8rem;
+              width: 12rem;
+              text-align: center;
+              border: $mainBorder;
+              border-radius: $mainBorderRadius;
+              font-size: 1.5rem;
+              font-weight: 600;
+              transition: $transition;
+              &:hover {
+                color: $mainBackgroundColor;
+                background-color: $mainFontColor;
+              }
+            }
+          }
+          .terms {
+            font-size: 1rem;
+            font-weight: 600;
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+        .right {
+          padding: 2rem;
+          background-color: $secondaryBackgroundColor;
+          border: $mainBorder;
+          border-radius: $mainBorderRadius;
+          img {
+            width: 9.25rem;
+            height: 9.25rem;
+          }
+        }
+      }
+    }
+  }
+}

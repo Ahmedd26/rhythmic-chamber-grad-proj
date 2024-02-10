@@ -1,0 +1,86 @@
+@import "../../../styles/functions";
+@import "../../../styles/variables";
+
+$dummy: $mainBackgroundColor;
+$dummy: $secondaryBackgroundColor;
+$dummy: $inputBackgroundColor;
+$dummy: $mainFontColor;
+$dummy: $mainFontColorHover;
+$dummy: $bebas;
+$dummy: $transition;
+$dummy: $mainBorder;
+$dummy: $mainBorderRadius;
+$dummy: $mainBoxShadow;
+$dummy: $secondaryFontColor;
+$dummy: $FontColor200;
+$dummy: $FontColor400;
+$dummy: $FontColor600;
+$dummy: $FontColor800;
+.sideTextContainer {
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: -5;
+    width: 200%;
+    height: 100%;
+    background-color: rgba(26, 20, 36, 0.6);
+    top: 50%;
+    left: 0px;
+    transform: translate(-50%, -50%);
+    border-radius: 0 8px 8px 0;
+  }
+  color: $mainFontColor;
+  grid-column: span 6;
+  width: 100%;
+  height: fit-content;
+  padding: 44px 0;
+  border-radius: 0 $mainBorderRadius $mainBorderRadius 0;
+  @include d-flex(flex-start, flex-start, column, 24px);
+  .sideTextHeading,
+  .lighterColor {
+    font-size: 32px;
+    font-family: $bebas;
+    font-weight: lighter;
+    color: $mainFontColor;
+    .lighterColor {
+      background: linear-gradient(
+        45deg,
+        $mainFontColorHover,
+        #3604d7,
+        $mainFontColor,
+        #4110e2,
+        $mainFontColorHover,
+        #0b4fcd,
+        $mainFontColor,
+        #5a0ecb,
+        $mainFontColorHover
+      );
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: gradientAnimation 7s infinite;
+      background-size: 200% auto;
+      font-size: 64px;
+      font-weight: lighter;
+    }
+  }
+  .sideTextList {
+    @include d-flex(flex-start, flex-start, column, 16px);
+    li {
+      color: $mainFontColor;
+      font-size: 18px;
+      font-weight: 400;
+    }
+  }
+}
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

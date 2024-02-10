@@ -1,0 +1,51 @@
+@import "../../styles/functions";
+@import "../../styles/variables";
+
+.FAQsPage {
+  margin: 4rem 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  color: $mainFontColor;
+  .FAQsTitle {
+    font-size: 2.5rem;
+    font-weight: lighter;
+    font-family: $bebas;
+  }
+  .holder {
+    @include d-flex(flex-start, flex-start, column, 2rem);
+
+    background-color: $mainBackgroundColor;
+    border: $mainBorder;
+    border-radius: $mainBorderRadius;
+    padding: 2rem;
+    .item {
+      background-color: $secondaryBackgroundColor;
+      border: $mainBorder;
+      border-radius: $mainBorderRadius;
+      padding: 1rem;
+      @include d-flex(flex-start, flex-start, row, 1rem);
+      .left {
+        img {
+          width: 5.75rem;
+          height: 5.75rem;
+          object-fit: cover;
+          border-radius: 50%;
+        }
+      }
+      .right {
+        @include d-flex(flex-start, flex-start, column, 0.5rem);
+        h2 {
+          font-size: 2rem;
+          font-weight: lighter;
+          font-family: $bebas;
+        }
+        p {
+          font-size: 1rem;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+}

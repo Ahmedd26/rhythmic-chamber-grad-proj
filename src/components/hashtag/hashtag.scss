@@ -1,0 +1,15 @@
+@import "../../styles/functions";
+@import "../../styles/variables";
+.tag {
+  background-color: $secondaryBackgroundColor;
+  color: $mainFontColor;
+  border-radius: 1.25rem;
+  transition: $transition;
+  cursor: pointer;
+  font-weight: 600;
+
+  &:hover {
+    background-color: $mainFontColor;
+    color: $mainBackgroundColor;
+  }
+}

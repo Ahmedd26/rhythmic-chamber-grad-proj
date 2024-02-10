@@ -1,0 +1,48 @@
+@import "../../styles/functions";
+@import "../../styles/variables";
+.profileProductHolder {
+  grid-column: span 9;
+  padding: 32px;
+  margin-bottom: 32px;
+  border: $mainBorder;
+  border-radius: $mainBorderRadius;
+  background-color: $mainBackgroundColor;
+  color: $mainFontColor;
+  @include d-flex(flex-start, flex-start, column, 32px);
+  height: fit-content;
+  h1 {
+    font-size: 32px;
+    font-family: $bebas;
+    font-weight: lighter;
+  }
+  .cardHolder {
+    width: 100%;
+    .slick-slider,
+    .slick-initialized {
+      .slick-next:before,
+      .slick-prev:before {
+        color: $mainFontColor;
+      }
+      width: 100%;
+      .slick-list {
+        width: 100%;
+        .slick-track {
+          width: 100%;
+          display: flex;
+          gap: 16px;
+          .slick-slide,
+          .slick-cloned {
+            width: 100%;
+            .slick-slide,
+            .slick-active,
+            .slick-current {
+              div {
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

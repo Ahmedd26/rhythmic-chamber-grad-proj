@@ -1,0 +1,28 @@
+@import "../../../../styles/functions";
+@import "../../../../styles/variables";
+$dummy: $mainBackgroundColor;
+$dummy: $secondaryBackgroundColor;
+$dummy: $inputBackgroundColor;
+$dummy: $mainFontColor;
+$dummy: $mainFontColorHover;
+$dummy: $bebas;
+$dummy: $transition;
+$dummy: $mainBorder;
+$dummy: $mainBorderRadius;
+$dummy: $mainBoxShadow;
+$dummy: $secondaryFontColor;
+$dummy: $FontColor200;
+$dummy: $FontColor400;
+$dummy: $FontColor600;
+$dummy: $FontColor800;
+.uploadTrackMainContainer {
+  color: $mainFontColor;
+  width: 100%;
+  margin: 64px 0;
+  .uploadTrackHeading {
+    font-size: 32px;
+    font-weight: 600;
+    padding-bottom: 16px;
+    border-bottom: $mainBorder;
+  }
+}

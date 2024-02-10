@@ -1,0 +1,71 @@
+@import "../../../styles/functions";
+@import "../../../styles/variables";
+.notifications {
+  grid-column: span 3;
+  background-color: $mainBackgroundColor;
+  border: $mainBorder;
+  border-radius: $mainBorderRadius;
+  color: $mainFontColor;
+  padding: 16px;
+  height: 100%;
+  .notTitle {
+    margin-bottom: 16px;
+    font-size: 26px;
+    font-weight: lighter;
+    font-family: $bebas;
+  }
+  .notificationBody {
+    background-color: $secondaryBackgroundColor;
+    border-radius: $mainBorderRadius;
+    max-height: 242px;
+    overflow-y: auto;
+    .notItem {
+      @include d-flex(center, flex-start, row, 16px);
+      padding: 10px 16px;
+      border-bottom: $mainBorder;
+      &:last-child {
+        border-bottom: none;
+      }
+      .notLeft {
+        position: relative;
+        img {
+          width: 40px;
+          height: 40px;
+          object-fit: cover;
+          border-radius: 50%;
+        }
+        .badge {
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          font-size: 7px;
+          padding: 4px;
+          border-radius: 50%;
+          background-color: $mainBackgroundColor;
+        }
+      }
+      .notRight {
+        @include d-flex(center, center, column, 8px);
+        .notContent {
+          font-size: 14px;
+        }
+        .notActions {
+          width: 100%;
+          @include d-flex(center, space-between, row);
+          span {
+            font-size: 10px;
+          }
+          button {
+            outline: none;
+            border: none;
+            background-color: transparent;
+            color: $mainFontColor;
+            font-size: 10px;
+            font-weight: 600;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
